@@ -1,0 +1,67 @@
+/*
+ * Generated with https://doodlenerd.com/html-control/css-checkbox-generator
+ */
+
+.control {
+    font-family: var(--sansFont);
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--textDark);
+    font-weight: 400;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.controlIndicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border: 2px solid var(--backgroundLight);
+    border-radius: 0px;
+    transition: 0.2s;
+}
+
+.control input:checked ~ .controlIndicator {
+    background: var(--secondaryDark);
+}
+
+.control input:focus ~ .controlIndicator {
+    border: 2px solid var(--primary);
+}
+
+.control input:disabled ~ .controlIndicator {
+    pointer-events: none;
+}
+
+.controlIndicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .controlIndicator:after {
+    display: block;
+}
+
+.controlCheckbox .controlIndicator:after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
